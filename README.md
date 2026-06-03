@@ -1,9 +1,5 @@
 # TARPO: Token-Wise Latent-Explicit Reasoning via Action-Routing Policy Optimization
 
-<!-- [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](https://github.com/Anonymous)
-[![Paper](https://img.shields.io/badge/Paper-PDF-red.svg)](#)
-[![Code](https://img.shields.io/badge/Code-Anonymous_4open-blue.svg)](https://github.com/NKU-LITI/TARPO-master.git) -->
-
 <p align="center">
   <a href="https://github.com/Anonymous">
     <img src="https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg" alt="Code License">
@@ -16,8 +12,6 @@
   </a>
 </p>
 
-<!-- **Authors:** Liting Zhang, Shiwan Zhao, Xuyang Zhao, Zichen Xu, Jianye Wang, Qicheng Li
-**Affiliation:** TMCC, College of Computer Science, Nankai University, Tianjin, China -->
 
 ---
 
@@ -33,9 +27,7 @@ To address this, we propose **TARPO** (Token-Wise Latent-Explicit Reasoning via 
 
 <!-- ![Overview of the TARPO framework](path/to/your/Figure1.png) -->
 <p align="center">
-  <!-- 左图 (a) -->
   <img src="assert/a.png" width="49%" alt="Token-Wise Action Routing" />
-  <!-- 右图 (b) -->
   <img src="assert/b.png" width="47%" alt="Action-Routing Policy Optimization" />
 </p>
 <p align="center">
