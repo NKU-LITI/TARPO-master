@@ -2366,8 +2366,6 @@ class FastLlamaModel:
                     train_lm_head = True
                 elif module == "embed_tokens":
                     train_embed_tokens = True
-                # elif "thinking_residual" in module:
-                #     train_thinking_residual = True
                 elif "action_head" in module:
                     train_action_head = True # [ADD]
                 else:
@@ -2483,30 +2481,6 @@ class FastLlamaModel:
             model.get_output_embeddings().modules_to_save.default.requires_grad_(True)
         pass
 
-        # if train_thinking_residual:
-        #     print("Unsloth: Training thinking_residual in mixed precision to save VRAM")
-        #     try:
-        #         new_dtype = model.get_input_embeddings().weight.dtype
-        #     except:
-        #         new_dtype = model.get_input_embeddings().modules_to_save.default.weight.dtype
-
-        #     for module in modules_to_save:
-        #         if "thinking_residual_gate_r" in module:
-        #             assert(hasattr(model.model.model.thinking_residual_gate_r, "modules_to_save"))
-        #             model.model.model.thinking_residual_gate_r.modules_to_save.default\
-        #                 .to(device = "cuda", dtype = new_dtype, non_blocking = True)
-        #             model.model.model.thinking_residual_gate_r.modules_to_save.default.requires_grad_(True)
-        #         if "thinking_residual_gate_i" in module:
-        #             assert(hasattr(model.model.model.thinking_residual_gate_i, "modules_to_save"))
-        #             model.model.model.thinking_residual_gate_i.modules_to_save.default\
-        #                 .to(device = "cuda", dtype = new_dtype, non_blocking = True)
-        #             model.model.model.thinking_residual_gate_i.modules_to_save.default.requires_grad_(True)
-        #         if "thinking_residual_Lambda" in module:
-        #             model.model.model.thinking_residual_Lambda.modules_to_save.default\
-        #                 .to(device = "cuda", dtype = torch.float32, non_blocking = True)
-        #             model.model.model.thinking_residual_Lambda.modules_to_save.default.requires_grad_(True)
-        
-        # [ADD]
         if train_action_head:
             print("Unsloth: Training action_head in mixed precision to save VRAM")
             try:
